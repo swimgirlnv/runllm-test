@@ -13,3 +13,11 @@ in seperate terminal:
 - `node server.mjs` (backend)
 - for successful run should say server is running on http://localhost:5001
 - NOTE: you will need to `touch .env` in runllm-backend root and add in `REACT_APP_OPENAI_API_KEY='your_openai_key'` for OpenAI assistant calls to work.
+
+OR for phaser:
+- `cd runllm-t`
+- `npm install`
+- `npm run dev`
+
+Image gallery:
+Artificial intelligence, artwork - https://www.sciencephoto.com/media/351841/view/artificial-intelligence-artwork

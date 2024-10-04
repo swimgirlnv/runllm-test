@@ -9,7 +9,7 @@ class MonitorScene extends Phaser.Scene {
     // Load assets for the monitor screen
     this.load.image('folder', 'assets/folder.png');
     this.load.image('message_board', 'assets/message_board.png');
-    this.load.image('screen_bg', 'assets/screen_background.png');
+    this.load.image('screen_bg', 'assets/desktop.png');
     this.load.image('exit_button', 'assets/exit_button.png'); // Add exit button image
   }
 
@@ -18,7 +18,7 @@ class MonitorScene extends Phaser.Scene {
     this.add.image(400, 300, 'screen_bg').setOrigin(0.5, 0.5);
 
     // Add interactive folder icons
-    const folder = this.add.image(200, 300, 'folder').setInteractive();
+    const folder = this.add.image(300, 300, 'folder').setInteractive();
     folder.on('pointerdown', () => {
       alert('Folder clicked! Here’s some information...');
     });
