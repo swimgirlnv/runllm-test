@@ -27,6 +27,7 @@ OR for blog:
 - `cd runllm-blog/runllm-blog`
 - `npm install`
 - `npm run dev`
+- NOTE: toggle admin in Blog.tsx line 18 `const [isAdmin] = useState(true/false);`
 
     to deploy:
     - `npm run build`

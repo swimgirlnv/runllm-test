@@ -4,29 +4,34 @@ import React, { useState, useEffect } from 'react';
 import BlogPost from './BlogPost';
 import AdminPanel from './AdminPanel'; // Separate Admin Panel Component
 import { db } from '../firebase';
-import { collection, addDoc, deleteDoc, onSnapshot, doc, updateDoc } from 'firebase/firestore';
+import { collection, addDoc, deleteDoc, onSnapshot, doc, updateDoc, serverTimestamp, query, orderBy } from 'firebase/firestore';
 
 interface Post {
   title: string;
   content: string;
   id: string;
+  timestamp?: unknown;
 }
 
 const Blog: React.FC = () => {
   const [posts, setPosts] = useState<Post[]>([]);
-  const [isAdmin] = useState(true); // Set to true for admin, false for reader view
+  const [isAdmin] = useState(false); // Set to true for admin, false for reader view
 
   useEffect(() => {
-    const unsubscribe = onSnapshot(collection(db, 'posts'), (snapshot) => {
+    const postsQuery = query(collection(db, 'posts'), orderBy('timestamp', 'desc'));
+    const unsubscribe = onSnapshot(postsQuery, (snapshot) => {
       const postsData = snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() } as Post));
       setPosts(postsData);
     });
     return unsubscribe;
   }, []);
 
-  const handleNewPost = async (post: Omit<Post, 'id'>) => {
+  const handleNewPost = async (post: Omit<Post, 'id' | 'timestamp'>) => {
     try {
-      await addDoc(collection(db, 'posts'), post);
+      await addDoc(collection(db, 'posts'), {
+        ...post,
+        timestamp: serverTimestamp(), // Add server timestamp
+      });
     } catch (error) {
       console.error("Error adding document:", error);
     }

@@ -1,1 +1,1 @@
-{"root":["./src/app.tsx","./src/firebase.ts","./src/main.tsx","./src/vite-env.d.ts","./src/components/adminpanel.tsx","./src/components/blog.tsx","./src/components/blogpost.tsx"],"version":"5.6.3"}
+{"root":["./src/app.tsx","./src/firebase.ts","./src/main.tsx","./src/vite-env.d.ts","./src/components/adminpanel.tsx","./src/components/blog.tsx","./src/components/blogpost.tsx","./src/components/richtexteditor.tsx"],"version":"5.6.3"}
