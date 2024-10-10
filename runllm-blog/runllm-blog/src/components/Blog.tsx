@@ -18,7 +18,7 @@ const Blog: React.FC = () => {
   const [isAdmin] = useState(false); // Set to true for admin, false for reader view
 
   useEffect(() => {
-    const postsQuery = query(collection(db, 'posts'), orderBy('timestamp', 'desc'));
+    const postsQuery = query(collection(db, 'posts'), orderBy('timestamp', 'asc'));
     const unsubscribe = onSnapshot(postsQuery, (snapshot) => {
       const postsData = snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() } as Post));
       setPosts(postsData);
