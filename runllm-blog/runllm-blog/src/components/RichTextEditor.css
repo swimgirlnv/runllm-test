@@ -1,0 +1,77 @@
+/* src/components/RichTextEditor.css */
+.rich-text-editor {
+    background: rgba(20, 20, 20, 0.9);
+    border: 1px solid #ff1aff;
+    padding: 10px;
+    border-radius: 6px;
+    box-shadow: 0 0 8px rgba(255, 26, 255, 0.3);
+    color: #d0d0d0;
+    font-family: 'Courier New', Courier, monospace;
+  }
+  
+  .rich-text-editor .toolbar {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 10px;
+  }
+  
+  .rich-text-editor .toolbar button {
+    background: #1a1a1a;
+    color: #d0d0d0;
+    padding: 6px 12px;
+    border: 1px solid #00f5ff;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .rich-text-editor .toolbar button.active {
+    background: #00f5ff;
+    color: #0f0f0f;
+  }
+  
+  .rich-text-editor .toolbar button:hover {
+    background: #00f5ff;
+    color: #0f0f0f;
+  }
+  
+  .rich-text-editor .ProseMirror {
+    color: #d0d0d0;
+    font-size: 1em;
+  }
+  
+  .rich-text-editor .ProseMirror p {
+    margin: 0;
+    padding: 0.5em 0;
+  }
+  
+  .rich-text-editor .ProseMirror strong {
+    color: #ff1aff;
+  }
+  
+  .rich-text-editor .ProseMirror em {
+    color: #00f5ff;
+  }
+  
+  .rich-text-editor .ProseMirror strike {
+    color: #ff6666;
+  }
+  
+  .rich-text-editor .ProseMirror code {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2px 4px;
+    border-radius: 4px;
+    color: #ffcc66;
+  }
+  
+  .rich-text-editor .ProseMirror blockquote {
+    border-left: 4px solid #ff1aff;
+    padding-left: 10px;
+    color: #d0d0d0;
+    font-style: italic;
+  }
+  
+  .rich-text-editor .ProseMirror ul {
+    padding-left: 20px;
+    list-style-type: disc;
+  }

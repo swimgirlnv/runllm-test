@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-expressions */
 // src/components/BlogPost.tsx
 import React, { useState } from 'react';
+import RichTextEditor from './RichTextEditor';
 import './BlogPost.css';
 
 interface BlogPostProps {
@@ -25,15 +26,22 @@ const BlogPost: React.FC<BlogPostProps> = ({ title, content, id, onDelete, onEdi
     <div className="blog-post">
       {isEditing ? (
         <>
-          <input value={editTitle} onChange={(e) => setEditTitle(e.target.value)} />
-          <textarea value={editContent} onChange={(e) => setEditContent(e.target.value)} />
+          <input
+            value={editTitle}
+            onChange={(e) => setEditTitle(e.target.value)}
+            placeholder="Edit Title"
+          />
+          <RichTextEditor
+            onUpdate={setEditContent} // Update content state as HTML
+            initialContent={editContent} // Set initial content as HTML
+          />
           <button onClick={handleSaveEdit}>Save</button>
           <button onClick={() => setIsEditing(false)}>Cancel</button>
         </>
       ) : (
         <>
-          <h2 className='neon-flicker'>{title}</h2>
-          <p>{content}</p>
+          <h2 className="neon-flicker">{title}</h2>
+          <div dangerouslySetInnerHTML={{ __html: content }} />
           {onDelete && <button onClick={() => onDelete(id)}>Delete</button>}
           {onEdit && <button onClick={() => setIsEditing(true)}>Edit</button>}
         </>
