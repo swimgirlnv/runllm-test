@@ -15,7 +15,6 @@ class MainScene extends Scene {
 
     preload() {
         // Load assets
-        this.load.image('background', 'assets/backgound.png');
         this.load.image('monitor', 'assets/monitor.png');
         this.load.image('conspiracy_board', 'assets/cb2.png');
     }
@@ -33,7 +32,7 @@ class MainScene extends Scene {
         this.conspiracyBoard.setScale(.6);
 
         // Add clickable monitor
-        this.monitor = this.add.image(500, 530, 'monitor').setInteractive();
+        this.monitor = this.add.image(500, 533, 'monitor').setInteractive();
         this.monitor.setScale(.5);
     
 

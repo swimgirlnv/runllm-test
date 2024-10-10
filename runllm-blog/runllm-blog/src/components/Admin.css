@@ -1,0 +1,40 @@
+/* src/components/AdminPanel.css */
+.admin-panel {
+    background: rgba(26, 26, 26, 0.85);
+    padding: 16px;
+    border-radius: 8px;
+    border: 1px solid #ff1aff;
+    box-shadow: 0 0 12px rgba(255, 26, 255, 0.3), 0 0 20px rgba(0, 245, 255, 0.2);
+    backdrop-filter: blur(2px);
+    margin-bottom: 24px;
+  }
+  
+  .admin-panel input,
+  .admin-panel textarea {
+    background-color: #2b2b2b;
+    color: #d0d0d0;
+    border: 1px solid #00f5ff;
+    padding: 8px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    width: 100%;
+    font-family: inherit;
+  }
+  
+  .admin-panel button {
+    background-color: #ff1aff;
+    color: #1a1a1a;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: bold;
+    border: none;
+    transition: all 0.2s ease;
+    box-shadow: 0 0 8px #ff1aff, 0 0 15px rgba(255, 26, 255, 0.5);
+  }
+  
+  .admin-panel button:hover {
+    background-color: #ff00e6;
+    box-shadow: 0 0 12px #ff00e6, 0 0 20px rgba(0, 245, 255, 0.3);
+  }

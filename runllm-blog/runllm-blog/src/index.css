@@ -1,0 +1,129 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: #00f5ff; /* Neon blue for links */
+  text-decoration: none;
+}
+
+a:hover {
+  text-shadow: 0px 0px 8px #00f5ff;
+}
+
+body {
+  color: #d0d0d0;
+  font-family: 'Courier New', Courier, monospace;
+  margin: 0;
+  padding: 0;
+  background-image: linear-gradient(45deg, #5e095e, #10494a);
+  background-position: top;
+  background-size: cover;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 100vh;
+}
+
+body::after {
+  background: rgba(0, 0, 0, 0.4);
+  pointer-events: none; 
+  backdrop-filter: blur(.8px) contrast(1.2);
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-size: 150% 150%;
+  background-image: url('https://i.imgur.com/q8QD2ON.png');
+  opacity: .65;
+  mix-blend-mode: overlay;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+/* src/styles/animations.css */
+@keyframes neon-flicker {
+  0%, 18%, 22%, 25%, 53%, 57%, 100% {
+    opacity: 1;
+  }
+  20%, 24%, 55% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes glitch {
+  0% {
+    transform: translate(0);
+    opacity: 0.8;
+  }
+  20% {
+    transform: translate(-2px, 2px);
+  }
+  40% {
+    transform: translate(-2px, -2px);
+    opacity: 1;
+  }
+  60% {
+    transform: translate(2px, 2px);
+  }
+  80% {
+    transform: translate(2px, -2px);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+
+.neon-flicker {
+  animation: neon-flicker 1.2s infinite alternate;
+}
+
+.blog-title {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  font-size: 1.5em;
+  color: #ff1aff; /* Neon pink */
+  text-shadow: 0px 0px 8px #ff1aff, 0px 0px 15px rgba(255, 26, 255, 0.5);
+  font-family: 'Courier New', Courier, monospace;
+  z-index: 1000; /* Ensure it stays on top */
+  animation: neon-flicker 1.2s infinite alternate;
+}
