@@ -29,29 +29,32 @@ function App()
     return (
         <div id="app">
             <PhaserGame ref={phaserRef} />
-
-            {/* Monitor Modal */}
-            {isMonitorOpen && (
-                <div className="modal">
-                    <button onClick={() => setIsMonitorOpen(false)}>Close</button>
-                    <h2>About R U N LLM</h2>
-                    {/* Here you can add interactive content, puzzles, or exploration */}
-                </div>
-            )}
-
-            <div>
-                <div>
-                    <button className="button" onClick={openMonitor}>About</button>
-                </div>
-                {/* <div>
-                    <button className="button" onClick={viewPostIt}>View Post-it</button>
-                </div>
-                <div>
-                    <button className="button" onClick={viewConspiracyBoard}>View Conspiracy Board</button>
-                </div> */}
-            </div>
         </div>
     );
 }
 
 export default App;
+
+/**
+ * 
+ * 
+ * 
+ {isMonitorOpen && (
+    <div className="modal">
+        <button onClick={() => setIsMonitorOpen(false)}>Close</button>
+        <h2>About R U N LLM</h2>
+    </div>
+)}
+
+<div>
+    <div>
+        <button className="button" onClick={openMonitor}>About</button>
+    </div>
+    {/* <div>
+        <button className="button" onClick={viewPostIt}>View Post-it</button>
+    </div>
+    <div>
+        <button className="button" onClick={viewConspiracyBoard}>View Conspiracy Board</button>
+    </div>
+</div>
+ */

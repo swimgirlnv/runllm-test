@@ -23,17 +23,24 @@ class MainScene extends Scene {
         this.camera = this.cameras.main;
         this.camera.setBackgroundColor(0x000000);
 
-        this.background = this.add.image(512, 500, 'background');
+        this.background = this.add.image(0, 0, 'background');
         this.background.setScale(.7);
         this.background.setAlpha(0.5);
     
         // Add clickable conspiracy board
-        this.conspiracyBoard = this.add.image(535, 300, 'conspiracy_board').setInteractive();
+        this.conspiracyBoard = this.add.image(700, 300, 'conspiracy_board').setInteractive();
         this.conspiracyBoard.setScale(.6);
 
         // Add clickable monitor
-        this.monitor = this.add.image(500, 533, 'monitor').setInteractive();
+        this.monitor = this.add.image(600, 533, 'monitor').setInteractive();
         this.monitor.setScale(.5);
+
+        this.monitor.on('pointerover', () => {
+        this.input.setDefaultCursor('default');
+        });
+        this.conspiracyBoard.on('pointerover', () => {
+        this.input.setDefaultCursor('default');
+        });
     
 
         // Monitor click triggers zoom and transition to MonitorScene
